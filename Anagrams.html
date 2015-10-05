@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Anagrams</title>
+    <script>
+
+        function areAnagrams(mainWord, checkWord) {
+            var mainArr = mainWord.match(/\w/g).sort();
+            var checkArr = checkWord.match(/\w/g).sort();
+
+            for(var i = 0; i < mainArr.length; i++) {
+                if(mainArr[i] !== checkArr[i]) return false;
+            }
+            return true;
+        }
+
+        console.log(areAnagrams('parliament', 'partial men'));
+        console.log(areAnagrams('parliament', 'partial man'));
+        console.log(areAnagrams('name', 'mane'));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
